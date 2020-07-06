@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TVOSKeyboard_Eample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXv-G2-MSf" customClass="KeyboardView" customModule="TVOSKeyboard">
+                                <rect key="frame" x="166.5" y="387" width="1587" height="306"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="306" id="0Ch-7J-36f"/>
+                                    <constraint firstAttribute="width" constant="1587" id="arV-W9-ezX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3a-g3-qIq">
+                                <rect key="frame" x="864" y="210" width="192" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVU-dE-pNv">
+                                <rect key="frame" x="914" y="110" width="92" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jVU-dE-pNv" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="1VY-fs-kUc"/>
+                            <constraint firstItem="u3a-g3-qIq" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="7pG-tL-kvf"/>
+                            <constraint firstItem="rXv-G2-MSf" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="VVn-nE-BXQ"/>
+                            <constraint firstItem="rXv-G2-MSf" firstAttribute="centerY" secondItem="wu6-TO-1qx" secondAttribute="centerY" id="fdA-E4-DZb"/>
+                            <constraint firstItem="u3a-g3-qIq" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" constant="150" id="hXh-zX-uSG"/>
+                            <constraint firstItem="jVU-dE-pNv" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" constant="50" id="xSd-kV-ZgW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="u3a-g3-qIq" id="ALu-VG-NAN"/>
+                        <outlet property="keyboardView" destination="rXv-G2-MSf" id="e6O-be-PCG"/>
+                        <outlet property="label" destination="jVU-dE-pNv" id="VcW-zw-Nip"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51" y="64"/>
+        </scene>
+    </scenes>
+</document>

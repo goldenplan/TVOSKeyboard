@@ -12,13 +12,20 @@ public class KeyboardConfig: DefaultKeyboardConfig{
     
     public var isDebug: Bool!
     public var keyboardDescriptions: [KeyboardDescription]!
+    public var allowNumeric: Bool!
+    public var allowSimbolic: Bool!
+    public var allowSpaceButton: Bool!
+    public var allowDeleteButton: Bool!
+    public var hideOptionalPanel: Bool!
+    public var simbolLimitOnLine: Int!
+    public var isUppercasedOnStart: Bool!
+    public var topFocusedElement: UIView? = nil
+    public var keyboardButtonsWidth: CGFloat!
+    public var keyboardOptionalButtonsWidth: CGFloat!
     public var keyboardButtonsStackSpacing: CGFloat!
     public var keyboardButtonsSummaryStackSpacing: CGFloat!
     public var keyboardOptionalButtonsStackSpacing: CGFloat!
     public var keyboardStackSpacing: CGFloat!
-    public var allowNumeric: Bool!
-    public var allowSimbolic: Bool!
-    public var hideOptionalPanel: Bool!
     public var keyboardNormalTitleColor: UIColor!
     public var keyboardFocusedTitleColor: UIColor!
     public var keyboardFocusedBackgroundColor: UIColor!
@@ -34,13 +41,6 @@ public class KeyboardConfig: DefaultKeyboardConfig{
     public var numberButtonFont: UIFont!
     public var deleteButtonImage: UIImage!
     public var langButtonImage: UIImage!
-    public var simbolLimitOnLine: Int!
-    public var allowSpaceButton: Bool!
-    public var allowDeleteButton: Bool!
-    public var topFocusedElement: UIView? = nil
-    public var keyboardButtonsWidth: CGFloat!
-    public var keyboardOptionalButtonsWidth: CGFloat!
-    public var isUppercasedOnStart: Bool!
     
     public override init() {
         super.init()
