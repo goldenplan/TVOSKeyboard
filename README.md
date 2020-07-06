@@ -86,4 +86,4 @@ If you find an issue, just [open a ticket](https://github.com/goldenplan/TVOSKey
 
 ### License
 
-Kingfisher is released under the MIT license. See LICENSE for details.
+TVOSKeyboard is released under the MIT license. See LICENSE for details.
