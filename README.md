@@ -1,7 +1,7 @@
 # TVOS Keyboard component
 
 <p align="center">
-<img src="https://github.com/goldenplan/TVOSKeyboard/blob/master/iimages/tvos_keyboard.jpg?raw=true" alt="Kingfisher" title="TVOSKeyboard" width="557"/>
+<img src="https://github.com/goldenplan/TVOSKeyboard/blob/master/images/tvos_keyboard.jpg?raw=true" alt="Kingfisher" title="TVOSKeyboard" width="557"/>
 </p>
 
 A custom keyboard component for tvOS app development.
