@@ -24,8 +24,6 @@ public class ExtraImage: UIView {
     var backgroundView: UIView = {
         
         let view = UIView()
-//        view.clipsToBounds = true
-//        view.layer.cornerRadius = 15
         
         return view
     }()
@@ -44,12 +42,8 @@ public class ExtraImage: UIView {
             x: 0, y: 0,
             width: text.width(font: font) + borderWidth * 2,
             height: text.height(font: font) + borderHeight * 2)
-
-        print("text.width(font: font)", text.width(font: font))
-        print("text.height(font: font)", text.height(font: font))
         
         super.init(frame: frame)
-        print("init", self)
         
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

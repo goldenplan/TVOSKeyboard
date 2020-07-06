@@ -869,14 +869,12 @@ public class KeyboardView: UIView  {
         guard
             let delegate = delegate,
             let keyboardValue = sender.titleLabel?.text else { return }
-        print(">", keyboardValue)
         delegate.addSimbol(keyboardValue)
         cachedString = cachedString + keyboardValue
     }
     
     @objc
     private func langButtonWasPressed(sender: KeyboardButton) {
-        print(">lang")
         
         if let currentIndex = config.keyboardDescriptions.firstIndex(where: { (keyboardDescription) -> Bool in
             return currentKeyboardDescription.code == keyboardDescription.code
@@ -896,7 +894,6 @@ public class KeyboardView: UIView  {
     @objc
     private func numberButtonWasPressed(sender: KeyboardButton) {
         
-        print(">Number")
         currentKeyboardDescription = Presets.numbers
         
     }
@@ -904,7 +901,6 @@ public class KeyboardView: UIView  {
     @objc
     private func deleteButtonWasPressed(sender: KeyboardButton) {
         
-        print(">delete")
         guard let delegate = delegate else { return }
         delegate.deleteSimbol()
         if cachedString.count > 0{
@@ -915,7 +911,6 @@ public class KeyboardView: UIView  {
     @objc
     private func spaceButtonWasPressed(sender: KeyboardButton) {
         
-        print(">space")
         guard let delegate = delegate else { return }
         delegate.addSimbol(" ")
         cachedString = cachedString + " "
@@ -925,14 +920,12 @@ public class KeyboardView: UIView  {
     @objc
     private func simbolsButtonWasPressed(sender: KeyboardButton) {
         
-        print(">simbols")
         currentKeyboardDescription = Presets.simbols
     }
     
     @objc
     private func caseLargeButtonWasPressed(sender: KeyboardButton) {
         
-        print(">case")
         isUppercased = true
         currentKeyboardDescription = prevKeyboardDescription
     }
@@ -940,7 +933,6 @@ public class KeyboardView: UIView  {
     @objc
     private func caseSmallButtonWasPressed(sender: KeyboardButton) {
         
-        print(">case")
         isUppercased = false
         currentKeyboardDescription = prevKeyboardDescription
     }
