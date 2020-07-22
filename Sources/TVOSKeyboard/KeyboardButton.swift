@@ -66,7 +66,7 @@ open class KeyboardButton: UIButton {
     }
 
     @objc
-    @IBInspectable public var shadowOffSetFocused: CGSize = CGSize(width: 0, height: 27) {
+    @IBInspectable public var shadowOffSetFocused: CGSize = CGSize(width: 0, height: 15) {
         didSet { updateView() }
     }
 
@@ -77,6 +77,26 @@ open class KeyboardButton: UIButton {
 
     @objc
     @IBInspectable public var focusedTitleColor: UIColor = .white {
+        didSet { updateView() }
+    }
+    
+    @objc
+    @IBInspectable public var focusedSpaceTitleColor: UIColor = .white {
+        didSet { updateView() }
+    }
+    
+    @objc
+    @IBInspectable public var normalSpaceTitleColor: UIColor = .white {
+        didSet { updateView() }
+    }
+    
+    @objc
+    @IBInspectable public var focusedSpaceBackgroundColor: UIColor = .darkGray {
+        didSet { updateView() }
+    }
+    
+    @objc
+    @IBInspectable public var normalSpaceBackgroundColor: UIColor = .gray {
         didSet { updateView() }
     }
 
@@ -200,6 +220,20 @@ open class KeyboardButton: UIButton {
     
     private let moutionEffect = ParallaxStyle.defaultParallaxStyle.motionEffectGroup
     
+    private func setShadow(){
+        layer.shadowOpacity = focusedShadowOpacity
+        layer.shadowRadius = focusedShadowRadius
+        layer.shadowColor = shadowColor
+        layer.shadowOffset = shadowOffSetFocused
+    }
+    
+    private func removeShadow(){
+        layer.shadowOpacity = 0
+        layer.shadowRadius = 0
+        layer.shadowColor = nil
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
     private func updateView() {
         setUpGradientView()
         titleLabel?.font = titleFont
@@ -207,16 +241,13 @@ open class KeyboardButton: UIButton {
         clipsToBounds = false
         setTitleColor(normalTitleColor, for: .normal)
         setTitleColor(focusedTitleColor, for: .focused)
-        layer.shadowOpacity = focusedShadowOpacity
-        layer.shadowRadius = focusedShadowRadius
-        layer.shadowColor = shadowColor
-        layer.shadowOffset = shadowOffSetFocused
+        
         
         if extraTitle != nil{
-            let normalImage = ExtraImage(text: extraTitle!, font: titleFont, textColor: focusedTitleColor, backgroundColor: normalTitleColor).asImage()
+            let normalImage = ExtraImage(text: extraTitle!, font: titleFont, textColor: normalSpaceTitleColor, backgroundColor: normalSpaceBackgroundColor).asImage()
             setImage(normalImage, for: .normal)
             
-            let focusedImage = ExtraImage(text: extraTitle!, font: titleFont, textColor: normalTitleColor, backgroundColor: focusedTitleColor).asImage()
+            let focusedImage = ExtraImage(text: extraTitle!, font: titleFont, textColor: focusedSpaceTitleColor, backgroundColor: focusedSpaceBackgroundColor).asImage()
             setImage(focusedImage, for: .focused)
         }
         
@@ -239,8 +270,6 @@ open class KeyboardButton: UIButton {
         gradientView.startPoint = gradientStartPoint
         gradientView.endPoint = gradientEndPoint
 
-        gradientView.addMotionEffect(moutionEffect)
-        
         if isFocused {
             gradientView.colors = focusedGradientBackgroundColors
         }
@@ -263,6 +292,10 @@ open class KeyboardButton: UIButton {
     }
     
     private func applyFocusedStyle() {
+        
+        setShadow()
+        gradientView.addMotionEffect(moutionEffect)
+        
         UIView.animate(
             withDuration: animationDuration,
             animations: {
@@ -273,6 +306,10 @@ open class KeyboardButton: UIButton {
     }
     
     private func applyUnfocusedStyle() {
+        
+        removeShadow()
+        gradientView.removeMotionEffect(moutionEffect)
+        
         UIView.animate(
             withDuration: animationDuration,
             animations: {

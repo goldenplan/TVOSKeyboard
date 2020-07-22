@@ -42,6 +42,11 @@ public class KeyboardConfig: DefaultKeyboardConfig{
     public var deleteButtonImage: UIImage!
     public var langButtonImage: UIImage!
     
+    public var focusedSpaceTitleColor: UIColor!
+    public var normalSpaceTitleColor: UIColor!
+    public var focusedSpaceBackgroundColor: UIColor!
+    public var normalSpaceBackgroundColor: UIColor!
+    
     public override init() {
         super.init()
         setDefaults()
@@ -79,6 +84,12 @@ public class KeyboardConfig: DefaultKeyboardConfig{
         keyboardOptionalButtonsWidth = defaultKeyboardOptionalButtonsWidth
         hideOptionalPanel = defaultHideOptionalPanel
         isUppercasedOnStart = defaultIsUppercasedOnStart
+        
+        focusedSpaceTitleColor = defaultFocusedSpaceTitleColor
+        normalSpaceTitleColor = defaultNormalSpaceTitleColor
+        focusedSpaceBackgroundColor = defaultFocusedSpaceBackgroundColor
+        normalSpaceBackgroundColor = defaultNormalSpaceBackgroundColor
+        
     }
 
 }
@@ -96,7 +107,7 @@ public class DefaultKeyboardConfig{
     let defaultKeyboardStackSpacing = CGFloat(20)
     let defaultAllowNumeric: Bool = true
     let defaultAllowSimbolic: Bool = true
-    let defaultKeyboardNormalTitleColor: UIColor = UIColor.white.withAlphaComponent(0.7)
+    let defaultKeyboardNormalTitleColor: UIColor = UIColor.white.withAlphaComponent(0.64)
     let defaultKeyboardFocusedTitleColor: UIColor = .black
     let defaultKeyboardFocusedBackgroundColor: UIColor =
         UIColor(red: 200/255, green: 200/255, blue: 200/234, alpha: 1)
@@ -104,13 +115,18 @@ public class DefaultKeyboardConfig{
         UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1)
     let defaultKeyboardNormalBackgroundColor: UIColor = .clear
     let defaultKeyboardNormalBackgroundEndColor: UIColor = .clear
-    let defaultKeyboardFont: UIFont = .systemFont(ofSize: 45)
+    let defaultKeyboardFont: UIFont = .systemFont(ofSize: 38, weight: .medium)
     let defaultDeleteButtonFont: UIFont = .boldSystemFont(ofSize: 30)
     let defaultSpaceButtonFont: UIFont = .boldSystemFont(ofSize: 18)
-    let defaultLangButtonFont: UIFont = .systemFont(ofSize: 45, weight: .light)
-    let defaultCaseButtonFont: UIFont = .systemFont(ofSize: 30)
-    let defaultSimbolsButtonFont: UIFont = .systemFont(ofSize: 30)
-    let defaultNumberButtonFont: UIFont = .systemFont(ofSize: 30)
+    let defaultLangButtonFont: UIFont = .systemFont(ofSize: 38, weight: .regular)
+    let defaultCaseButtonFont: UIFont = .systemFont(ofSize: 34, weight: .regular)
+    let defaultSimbolsButtonFont: UIFont = .systemFont(ofSize: 34, weight: .regular)
+    let defaultNumberButtonFont: UIFont = .systemFont(ofSize: 34, weight: .regular)
+    
+    let defaultFocusedSpaceTitleColor: UIColor = UIColor.white.withAlphaComponent(0.64)
+    let defaultNormalSpaceTitleColor: UIColor = .black
+    let defaultFocusedSpaceBackgroundColor: UIColor = .black
+    let defaultNormalSpaceBackgroundColor: UIColor = UIColor.white.withAlphaComponent(0.64)
     
     var defaultDeleteButtonImage: UIImage{
         let defaultDeleteImageConfig = UIImage.SymbolConfiguration(font: defaultDeleteButtonFont)
@@ -132,7 +148,7 @@ public class DefaultKeyboardConfig{
     
     let defaultTopFocusedElement: UIView? = nil
     
-    let defaultKeyboardButtonsWidth: CGFloat = 50
+    let defaultKeyboardButtonsWidth: CGFloat = 55
     let defaultKeyboardOptionalButtonsWidth: CGFloat = 100
     let defaultIsUppercasedOnStart = false
 }

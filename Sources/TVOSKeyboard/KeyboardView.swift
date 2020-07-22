@@ -469,6 +469,7 @@ public class KeyboardView: UIView  {
 
             button.titleFont = config.keyboardFont
             button.tag = 3
+            
             button.contentEdgeInsets = UIEdgeInsets(top: 0,
                                                     left: 0,
                                                     bottom: 0,
@@ -671,9 +672,9 @@ public class KeyboardView: UIView  {
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(deleteButtonLongPress))
         deleteButton.addGestureRecognizer(longGesture)
         
-        deleteButton.contentEdgeInsets = UIEdgeInsets(top: 0,
+        deleteButton.contentEdgeInsets = UIEdgeInsets(top: 10,
                                                       left: 0,
-                                                      bottom: 0,
+                                                      bottom: 10,
                                                       right: 0)
         
         deleteButtonStack.addArrangedSubview(deleteButton)
@@ -718,6 +719,10 @@ public class KeyboardView: UIView  {
         spaceButton.accessibilityIdentifier = "Keyboard.Button.Space"
         spaceButton.accessibilityLabel = "Space"
         spaceButton.titleFont = config.spaceButtonFont
+        spaceButton.normalSpaceTitleColor = config.normalSpaceTitleColor
+        spaceButton.focusedSpaceTitleColor = config.focusedSpaceTitleColor
+        spaceButton.normalSpaceBackgroundColor = config.normalSpaceBackgroundColor
+        spaceButton.focusedSpaceBackgroundColor = config.focusedSpaceBackgroundColor
         
         spaceButton.sizeToFit()
         spaceButton.addTarget(self, action: #selector(spaceButtonWasPressed), for: .primaryActionTriggered)
