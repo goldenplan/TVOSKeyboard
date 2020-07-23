@@ -1,14 +1,14 @@
-# TVOS Keyboard component
+# tvOS Keyboard component
 
 <p align="center">
-<img src="https://github.com/goldenplan/TVOSKeyboard/blob/master/images/tvos_keyboard.jpg?raw=true" alt="Kingfisher" title="TVOSKeyboard" width="557"/>
+<img src="https://github.com/goldenplan/TVOSKeyboard/blob/master/images/tvos_keyboard.jpg?raw=true" alt="tvOS keyboard" title="TVOS Keyboard" width="557"/>
 </p>
 
 A custom keyboard component for tvOS app development.
 
 ## Features
 
-- [x] Can be used in any UIViewController.
+- [x] This tvOS Keyboard can be used in any UIViewController.
 - [x] You can enter text, numbers, and other characters using the touchpad.
 - [x] Support for all input languages.
 - [x] The keyboard style is almost identical to the native component, but can be changed if the developer wishes.
@@ -26,9 +26,9 @@ dependencies: [
 ]
 ```
 
-### Example
+### Example use tvOS Keyboard
 
-With the powerful options, you can do hard tasks with TVOSKeyboard in a simple way. For example, the code below:
+With the powerful options, you can do hard tasks with tvOS Keyboard in a simple way. For example, the code below:
 
 1. Use Storyboard or code to create a keyboard component.
 
@@ -40,7 +40,7 @@ With the powerful options, you can do hard tasks with TVOSKeyboard in a simple w
 2. Create your own set of characters to enter or use one of the preset ones.
 
 ```swift
-    let eng = KeyboardDescription(code: "en", type: .letters, simbols: "abcdefghijklmnopqrstuvwxyz", label:     "abc", spaceName: "space")
+    let eng = KeyboardDescription(code: "en", type: .letters, simbols: "abcdefghijklmnopqrstuvwxyz", label: "abc", spaceName: "space")
 ```
 
 3. Create a configuration object and change the default values if necessary.
