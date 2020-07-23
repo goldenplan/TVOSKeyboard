@@ -46,8 +46,8 @@ class ViewController: UIViewController {
         config.isUppercasedOnStart = true
         config.allowNumeric = false
         config.allowSimbolic = true
-        config.allowSpaceButton = false
-        config.allowDeleteButton = false
+        config.allowSpaceButton = true
+        config.allowDeleteButton = true
         config.hideOptionalPanel = false
         keyboardView.config = config
         keyboardView.delegate = self

@@ -824,7 +824,7 @@ public class KeyboardView: UIView  {
     
     private func startFastTransitionTimer(){
         
-        fastTransitionTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(deleteFastTransitionTimer), userInfo: nil, repeats: false)
+        fastTransitionTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(deleteFastTransitionTimer), userInfo: nil, repeats: false)
     }
     
     @objc private func deleteFastTransitionTimer(){
