@@ -476,11 +476,9 @@ public class KeyboardView: UIView  {
                                                     right: 10)
 
             keyboardButtonsStack.addArrangedSubview(button)
-            let realWidth = (((button.titleLabel?.text ?? "") as NSString).size(withAttributes: [.font: config.keyboardFont]).width)
-            let buttonWidth = max(realWidth, config.keyboardButtonsWidth)
             constrain(button) {
                 button in
-                button.width >= buttonWidth
+                button.width >= config.keyboardButtonsWidth
                 
             }
             button.titleLabel?.sizeToFit()
