@@ -14,6 +14,7 @@ public struct KeyboardDescription {
     public let simbols     : String
     public let label       : String
     public let spaceName   : String?
+    public let simbolsArray: [String]?
     
     public init(
         code        : String,
@@ -34,7 +35,11 @@ public struct KeyboardDescription {
     }
     
     func getSimbols(isUppercased: Bool)->[String]{
-        simbols.getArray().map { (item) -> String in
+        if let array = simbolsArray,
+           !array.isEmpty {
+            return array
+        }
+        return simbols.getArray().map { (item) -> String in
             isUppercased ? item.uppercased() : item.lowercased()
         }
     }
