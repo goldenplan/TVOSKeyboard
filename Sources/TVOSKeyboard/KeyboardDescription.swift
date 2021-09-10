@@ -21,13 +21,15 @@ public struct KeyboardDescription {
         type        : KeyboardDescriptionType,
         simbols     : String,
         label       : String,
-        spaceName   : String?) {
+        spaceName   : String?,
+        simbolsArray: [String]? = nil) {
         
         self.code       = code
         self.type       = type
         self.simbols    = simbols
         self.label      = label
         self.spaceName  = spaceName
+        self.simbolsArray = simbolsArray
     }
     
     var count: Int{
