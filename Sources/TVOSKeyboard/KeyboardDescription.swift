@@ -14,19 +14,22 @@ public struct KeyboardDescription {
     public let simbols     : String
     public let label       : String
     public let spaceName   : String?
+    public let simbolsArray: [String]?
     
     public init(
         code        : String,
         type        : KeyboardDescriptionType,
         simbols     : String,
         label       : String,
-        spaceName   : String?) {
+        spaceName   : String?,
+        simbolsArray: [String]? = nil) {
         
         self.code       = code
         self.type       = type
         self.simbols    = simbols
         self.label      = label
         self.spaceName  = spaceName
+        self.simbolsArray = simbolsArray
     }
     
     var count: Int{
@@ -34,7 +37,11 @@ public struct KeyboardDescription {
     }
     
     func getSimbols(isUppercased: Bool)->[String]{
-        simbols.getArray().map { (item) -> String in
+        if let array = simbolsArray,
+           !array.isEmpty {
+            return array
+        }
+        return simbols.getArray().map { (item) -> String in
             isUppercased ? item.uppercased() : item.lowercased()
         }
     }
